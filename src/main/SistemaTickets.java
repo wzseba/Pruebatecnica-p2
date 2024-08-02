@@ -3,6 +3,7 @@ package main;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class SistemaTickets {
 
@@ -29,6 +30,21 @@ public class SistemaTickets {
 		listaTickets.add(ticket2);
 		listaTickets.add(ticket3);
 		
+		// Suma de precio de todos los tickets
+		
+		
+		// Solicitar al usuario que ingrese un numero de fila
+		Scanner input = new Scanner(System.in);
+		int numFila;
+		
+		System.out.print("Ingrese numero de fila: ");
+		numFila = input.nextInt();
+		
+		for (int i = 0; i < listaTickets.size(); i++) {
+			if(numFila == listaTickets.get(i).getFila()) {
+				System.out.println(listaTickets.get(i));
+			}
+		}
 		
 	}
 }
