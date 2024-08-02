@@ -72,8 +72,10 @@ public class Tickets {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Ticket numero=" + numero + ", fila=" + fila + ", asiento=" + asiento + ", fechaCompra=" + fechaCompra
+				+ ", fechaValidez=" + fechaValidez + ", precio=" + precio ;
+	}	
 }
