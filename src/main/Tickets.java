@@ -10,19 +10,21 @@ public class Tickets {
 	private Date fechaCompra;
 	private Date fechaValidez;
 	private double precio;
+	private Clientes cliente;
 	
+
 	// Constructor vacio para usar con get y set
 	public Tickets() {};
 
 	// Constructor con parametros
-	public Tickets(int numero, int fila, int asiento, Date fechaCompra, Date fechaValidez, double precio) {
-		super();
+	public Tickets(int numero, int fila, int asiento, Date fechaCompra, Date fechaValidez, double precio, Clientes cliente) {
 		this.numero = numero;
 		this.fila = fila;
 		this.asiento = asiento;
 		this.fechaCompra = fechaCompra;
 		this.fechaValidez = fechaValidez;
 		this.precio = precio;
+		this.cliente = cliente;
 	}
 
 	public int getNumero() {
@@ -73,9 +75,17 @@ public class Tickets {
 		this.precio = precio;
 	}
 
+	public Clientes getCliente() {
+		return cliente;
+	}
+	
+	public void setCliente(Clientes cliente) {
+		this.cliente = cliente;
+	}
+	
 	@Override
 	public String toString() {
-		return "Ticket numero=" + numero + ", fila=" + fila + ", asiento=" + asiento + ", fechaCompra=" + fechaCompra
-				+ ", fechaValidez=" + fechaValidez + ", precio=" + precio ;
+		return "Ticket: numero=" + numero + ", fila=" + fila + ", asiento=" + asiento + ", fechaCompra=" + fechaCompra
+				+ ", fechaValidez=" + fechaValidez + ", precio=" + precio + ", cliente=" + cliente;
 	}	
 }
