@@ -1,22 +1,36 @@
 package main;
 
-public class Clientes {
-	
-	 private int id;
-	 private String nombre;
-	 private String apellido;
-	 
-	 public Clientes() {}
+import java.util.ArrayList;
+import java.util.List;
 
-	 public Clientes(int id, String nombre, String apellido) {
-		 this.id = id;
-		 this.nombre = nombre;
-		 this.apellido = apellido;
-	 }
-	 
-	 public int getId() {
-		 return id;
-	 }
+public class Clientes {
+
+	private int id;
+	private String nombre;
+	private String apellido;
+	private List<Tickets> listaTicketsCliente = new ArrayList<Tickets>();
+
+	public Clientes() {
+	}
+
+	public Clientes(int id, String nombre, String apellido, List<Tickets> listaTicketsCliente) {
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.listaTicketsCliente = listaTicketsCliente;
+	}
+
+	public List<Tickets> getListaTickets() {
+		return listaTicketsCliente;
+	}
+
+	public void setListaTickets(List<Tickets> listaTickets) {
+		this.listaTicketsCliente = listaTickets;
+	}
+
+	public int getId() {
+		return id;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -40,7 +54,7 @@ public class Clientes {
 
 	@Override
 	public String toString() {
-		return " [ id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + " ]";
+		return "Cliente id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", lista de Tickets:"+ listaTicketsCliente;
 	}
 
 }
